@@ -12,7 +12,7 @@ def index():
 @app.route("/data", methods=["POST"])
 def add_data():
     data = request.json
-    collection = get_collection("mycollection")
+    collection = get_collection("users_data")
     result = collection.insert_one(data)
     return jsonify({"inserted_id": str(result.inserted_id)}), 201
 
